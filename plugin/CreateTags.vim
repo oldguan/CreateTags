@@ -2,7 +2,7 @@
 "FileName : createTags.vim                                       "
 "Author   : seiya guan                                           "
 "Desc     : Create ctags and lookupfile_tag in current path      "
-"Version  : 0.9                                                  "
+"Version  : 0.9  First Version                                   "
 "           0.91 Added param for CreateTags function,If not will "
 "                use current path for default                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -13,13 +13,13 @@ if !has('python')
 endif
 
 function! CreateTags(...)
-    " curPath: must create tags path and tags file path
+    " s:curPath: tags save path and for generate
     let s:curPath = getcwd() 
     if(a:0 > 0)
         let s:curPath = a:1 
     endif
 
-"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+"==========================================================================
 python << EOF
 import sys
 import os
@@ -46,7 +46,7 @@ os.system("ctags -f " + os.path.join(tagsPath,".tags") + " -R " + os.path.join(p
 
 EOF
 "end of python
-"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+"==========================================================================
 
 if filereadable(s:curPath . '/.lookupfile_tags')
     let g:LookupFile_TagExpr = string (s:curPath .'/.lookupfile_tags')
