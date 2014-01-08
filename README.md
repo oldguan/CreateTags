@@ -1,4 +1,4 @@
-CreateTags
+About
 ==========
 
 Create tags file for vim and lookupfile plugin
