@@ -3,6 +3,12 @@ CreateTags
 
 Create tags file for vim and lookupfile plugin
 
+Required
+========
+
+* vim with python
+* ctags in the path
+
 Install
 =======
 
