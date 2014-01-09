@@ -6,6 +6,7 @@
 "           0.91 Added param for CreateTags function,If not will "
 "                use current path for default                    "
 "           0.92 fix bug when give the path to create tags       "
+"           0.93 fix g:LookupFile_TagExpr set error              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if !has('python')
