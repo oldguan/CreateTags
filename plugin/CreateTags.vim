@@ -45,7 +45,7 @@ fw.close()
 # create ctags file
 os.system("ctags -f " + os.path.join(tagsPath,".tags") + " -R " + os.path.join(projPath,"") + "* --fields=+lS")
 
-vim.command("let g:LookupFile_TagExpr = \"" + os.path.join(tagsPath, ".lookupfile_tags").replace("\\","\\\\") + "\"");
+vim.command("let g:LookupFile_TagExpr = string(\"" + os.path.join(tagsPath, ".lookupfile_tags").replace("\\","\\\\") + "\")");
 vim.command("let &tags=\"./tags,tags," + os.path.join(tagsPath, ".tags").replace("\\","\\\\") + "\"");
 EOF
 "end of python
