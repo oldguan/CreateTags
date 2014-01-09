@@ -5,6 +5,7 @@
 "Version  : 0.9  First Version                                   "
 "           0.91 Added param for CreateTags function,If not will "
 "                use current path for default                    "
+"           0.92 fix bug when give the path to create tags       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if !has('python')
